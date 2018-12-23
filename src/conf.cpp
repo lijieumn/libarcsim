@@ -706,6 +706,7 @@ namespace arcsim {
         parse(magic.use_eigen_solver, json["use_eigen_solver"], false);
         parse(magic.use_proximity_metric, json["use_proximity_metric"], true);
         parse(magic.enable_localopt, json["enable_localopt"], false);
+        parse(magic.save_mass_center_data, json["save_mass_center_data"], false);
 #undef PARSE_MAGIC
     }
 

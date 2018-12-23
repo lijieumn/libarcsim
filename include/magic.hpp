@@ -73,6 +73,7 @@ namespace arcsim {
 		bool evImpacts;
 		bool vvImpacts;
 		bool enable_localopt;
+		bool save_mass_center_data;
 		std::string sim_type;
 
 		Magic() :
@@ -119,6 +120,7 @@ namespace arcsim {
 				apply_adhesion(false),
 				facet_solver(false),
 				enable_localopt(false),
+				save_mass_center_data(false),
 				sim_type("argus") {}
 	};
 

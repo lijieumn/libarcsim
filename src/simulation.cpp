@@ -123,7 +123,9 @@ namespace arcsim {
 
         if (arcsim::magic.relax_initial_state) {
 
+#ifndef SILENCE_ARGUS
             std::cout << "Relaxing initial state...\n";
+#endif
 
             validate_handles(sim);
             if (arcsim::magic.preserve_creases)
@@ -131,11 +133,17 @@ namespace arcsim {
                     reset_plasticity(sim.cloths[c]);
             bool equilibrate = false;
             if (equilibrate) {
+#ifndef SILENCE_ARGUS
                 std::cout << "-- Equilibration step\n";
+#endif
                 equilibration_step(sim);
+#ifndef SILENCE_ARGUS
                 std::cout << "-- Remeshing step\n";
+#endif
                 remeshing_step(sim, true);
+#ifndef SILENCE_ARGUS
                 std::cout << "-- Equilibration step\n";
+#endif
                 equilibration_step(sim);
             } else {
                 remeshing_step(sim, true);
